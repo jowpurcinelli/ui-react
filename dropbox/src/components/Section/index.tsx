@@ -13,6 +13,3 @@ import { Pane, Text } from 'evergreen-ui'
   <Text>An awesome Pane</Text>
 </Pane>
 
-
-
-// this section contains a SideMenu in the side, obviously

@@ -1,6 +1,6 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
 //import { CompleteForm} from '../Autocomplete';
+import {Container} from './styles';
 
 declare global {
     interface Window {
@@ -16,7 +16,7 @@ const SideMenu : React.FC = ({ children }) => {
 
     useEffect(() => {
         function onScroll ( ) {
-            setScrollY( windows.scrollY );
+            setScrollY( window.scrollY );
             setIsActive (false);
         }
 
@@ -27,7 +27,7 @@ const SideMenu : React.FC = ({ children }) => {
     
     const classes = [
         isActive ? 'open' :  ' ' ,
-        scrollY <= scrollThreshol ? 'scrollOpen' :  ' ',   
+        scrollY <= scrollThreshold ? 'scrollOpen' :  ' ',   
     ];
     const className = classes.join('  ').trim( );
 
