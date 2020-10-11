@@ -17,8 +17,8 @@ interface Props {
 const Section: React.FC<Props> = ({ variant, title, description }) => {
   const buttonVariant = Math.round(Math.random());
 
-  function handleToggle( ) 
-  if (window.toggleActiveMenu) window.toggleActiveMenu( );
+  function handleToggle( ) {
+    if (window.toggleActiveMenu) window.toggleActiveMenu( );
   }
 
   return (
