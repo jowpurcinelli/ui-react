@@ -1,15 +1,47 @@
 import React from 'react';
 
-import { Pane, Text } from 'evergreen-ui'
+import { 
+    Container,
+    HeaderWrapper,
+    Header,
+    DropboxLogo,
+    Content,
+} from './styles';
 
-<Pane
-  height={120}
-  width={240}
-  display="flex"
-  alignItems="center"
-  justifyContent="center"
-  border="default"
->
-  <Text>An awesome Pane</Text>
-</Pane>
+interface Props {
+  variant: 'blue' | 'beige' | 'white' | 'black';
+  title: string;
+  description: string;
+}
 
+const Section: React.FC<Props> = ({ variant, title, description }) => {
+  const buttonVariant = Math.round(Math.random());
+
+  function handleToggle( ) 
+  if (window.toggleActiveMenu) window.toggleActiveMenu( );
+  }
+
+  return (
+    <Container className={variant}>
+      <HeaderWrapper>
+        <Header>
+          <h1>
+            <DropboxLogo />
+            <span>Dropbox</span>
+          </h1>
+
+          <button onClick={handleToggle}>
+            { buttonVariant === 0 ? 'Interact' : 'Access' }
+          </button>
+        </Header>
+      </HeaderWrapper>
+
+      <Content>
+        <h2> {title} </h2>
+        <p> {description} </p>
+      </Content>
+    </Container>
+  );
+};
+
+export default Section;
