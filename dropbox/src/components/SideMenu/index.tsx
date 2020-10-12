@@ -1,10 +1,9 @@
-import React, {useState, useEffect} from 'react';
-//import { CompleteForm} from '../Autocomplete';
-import {Container} from './styles';
+import React, { useState, useEffect } from 'react';
+import { Container } from './styles';
 
 declare global {
     interface Window {
-        toggleActiveMenu:   (() => void  ) | undefined;
+        toggleActiveMenu:   (() => void) | undefined;
     }
 }
 
@@ -21,23 +20,24 @@ const SideMenu : React.FC = ({ children }) => {
         }
 
         window.addEventListener('scroll', onScroll);
+
         return ( ) => window.removeEventListener('scroll', onScroll);
-    },
-        [scrollY]);
+    }, [scrollY]);
     
     const classes = [
         isActive ? 'open' :  ' ' ,
         scrollY <= scrollThreshold ? 'scrollOpen' :  ' ',   
     ];
     const className = classes.join('  ').trim( );
+    //trim removes white space from strings
 
         function toggleActiveMenu( ) {
             setIsActive((prev) => !prev );
         }
 
         window.toggleActiveMenu = toggleActiveMenu;
+        
         return <Container className={className}>{children}</Container>;
 };
 
 export default SideMenu;
-
